@@ -1,10 +1,19 @@
-
 def count_batteries_by_usage(cycles):
-  return {
-    "lowCount": 0,
-    "mediumCount": 0,
-    "highCount": 0
-  }
+  c1=0
+  c2=0
+  c3=0
+  for i in range(len(cycles)):
+    if(cycles[i]<400):
+        c1+=1
+    elif(cycles[i]>=400 and cycles[i]<=919):
+        c2+=1
+    else:
+        c3+=1
+    return {
+        "lowCount":c1,
+        "mediumCount": c2,
+        "highCount":c3
+    }
 
 
 def test_bucketing_by_number_of_cycles():
